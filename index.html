@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Md. Angir Hossain | System Engineer</title>
+  <meta name="description" content="Portfolio of Md. Angir Hossain, B.Sc. Engineering (CSE) graduate and System Engineer. Open the workspace to browse education, experience, projects and skills.">
+  <meta name="theme-color" content="#1e1e1e">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%231e1e1e'/%3E%3Ctext x='16' y='21.500' font-size='15' text-anchor='middle' fill='%23569cd6' font-family='monospace' font-weight='700'%3E%7B%7D%3C/text%3E%3C/svg%3E">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body data-phase="desktop">
+
+  <!-- Shared SVG symbols -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <defs>
+      <linearGradient id="vsg" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#4cc0ff"/>
+        <stop offset="1" stop-color="#0a84d6"/>
+      </linearGradient>
+    </defs>
+    <symbol id="i-vscode" viewBox="0 0 100 100">
+      <path fill="#0a5c99" d="M71 5 94 16v68L71 95 30 57.500 13 71 5 66V34l8-5 17 13.500z"/>
+      <path fill="url(#vsg)" d="M71 5 94 16v68L71 95z"/>
+      <path fill="#08324f" fill-opacity=".55" d="M71 27v46L43.500 50z"/>
+    </symbol>
+  </svg>
+
+  <!-- Custom cursor -->
+  <div class="cursor-trail" id="cursorTrail" aria-hidden="true"></div>
+  <div class="cursor" id="cursor" aria-hidden="true"><i></i></div>
+
+  <noscript>
+    <div class="noscript">
+      <h1>Md. Angir Hossain</h1>
+      <p>B.Sc. Engineering (CSE) | System Engineer</p>
+      <p>This portfolio is a browser-based code editor, so it needs JavaScript to run.</p>
+      <p>
+        <a href="mailto:mdanjir3734@gmail.com">mdanjir3734@gmail.com</a><br>
+        <a href="https://github.com/Md-Anjir">github.com/Md-Anjir</a>
+      </p>
+    </div>
+  </noscript>
+
+  <!-- PHASE 1: Windows desktop -->
+  <main class="desktop" id="desktop" aria-label="Windows desktop">
+
+    <!-- Matrix Rain Canvas (Only visible on mobile) -->
+    <canvas id="matrixCanvas"></canvas>
+    
+    <div class="wallpaper" aria-hidden="true"></div>
+
+    <!-- Mobile Cursor -->
+    <div class="m-cursor" id="mCursor" aria-hidden="true">
+      <svg width="22" height="30" viewBox="0 0 22 30">
+        <path d="M1 1v21l5.500-5 3.600 8.200 3.200-1.400-3.500-8H17.500z" fill="#fff" stroke="#000" stroke-width="1.300" stroke-linejoin="round"/>
+      </svg>
+    </div>
+
+    <!-- Phone-only status bar -->
+    <div class="m-status" aria-hidden="true">
+      <time id="mClock">9:41</time>
+      <span class="m-status-right">
+        <i class="fa-solid fa-signal"></i>
+        <i class="fa-solid fa-wifi"></i>
+        <i class="fa-solid fa-battery-full"></i>
+      </span>
+    </div>
+
+    <ul class="desktop-icons">
+      <li>
+        <button class="d-icon" type="button">
+          <span class="d-icon-img"><i class="fa-solid fa-desktop" style="color:#8ecbff"></i></span>
+          <span class="d-icon-label">This PC</span>
+        </button>
+      </li>
+      <li>
+        <button class="d-icon" type="button">
+          <span class="d-icon-img"><i class="fa-solid fa-trash-can" style="color:#d4e6ff"></i></span>
+          <span class="d-icon-label">Recycle Bin</span>
+        </button>
+      </li>
+      <li>
+        <button class="d-icon" type="button">
+          <span class="d-icon-img"><i class="fa-solid fa-folder-open" style="color:#f7c948"></i></span>
+          <span class="d-icon-label">Documents</span>
+        </button>
+      </li>
+      <li>
+        <button class="d-icon" type="button" id="vscodeIcon" title="Double-click to open">
+          <span class="d-icon-img"><svg aria-hidden="true"><use href="#i-vscode"/></svg></span>
+          <span class="d-icon-label">Visual Studio Code</span>
+        </button>
+      </li>
+    </ul>
+
+    <button class="skip-intro" id="skipIntro" type="button">Skip intro</button>
+
+    <footer class="taskbar" aria-hidden="true">
+      <div class="tsk-center">
+        <span class="tsk-ico"><i class="fa-brands fa-windows" style="color:#4cc2ff"></i></span>
+        <span class="tsk-ico"><i class="fa-solid fa-magnifying-glass"></i></span>
+        <span class="tsk-ico"><i class="fa-solid fa-folder" style="color:#f7c948"></i></span>
+        <span class="tsk-ico"><i class="fa-brands fa-edge" style="color:#3fd0c9"></i></span>
+        <span class="tsk-ico" id="tskVscode"><svg><use href="#i-vscode"/></svg></span>
+      </div>
+      <div class="tsk-tray">
+        <i class="fa-solid fa-chevron-up"></i>
+        <i class="fa-solid fa-wifi"></i>
+        <i class="fa-solid fa-volume-high"></i>
+        <i class="fa-solid fa-battery-full"></i>
+        <div class="tsk-clock"><time id="clockTime">--:--</time><time id="clockDate">--/--/----</time></div>
+      </div>
+    </footer>
+
+    <!-- Scripted mouse (PC) -->
+    <div class="click-ring" id="clickRing" aria-hidden="true"></div>
+    <div class="vcursor" id="vcursor" aria-hidden="true">
+      <svg width="22" height="30" viewBox="0 0 22 30"><path d="M1 1v21l5.500-5 3.600 8.200 3.200-1.400-3.500-8H17.500z" fill="#fff" stroke="#000" stroke-width="1.300" stroke-linejoin="round"/></svg>
+    </div>
+  </main>
+
+  <!-- PHASE 2: VS Code workspace -->
+  <div class="ide booting" id="ide" aria-hidden="true">
+    <header class="titlebar">
+      <div class="tb-left">
+        <svg class="tb-logo" aria-hidden="true"><use href="#i-vscode"/></svg>
+        <nav class="menubar" id="menubar" aria-label="Application menu"></nav>
+      </div>
+      <div class="tb-title" id="tbTitle">md-anjir-portfolio</div>
+      <div class="tb-controls">
+        <button type="button" data-act="exit" title="Minimize to desktop"><i class="fa-solid fa-minus"></i></button>
+        <button type="button" data-act="fullscreen" title="Toggle full screen"><i class="fa-regular fa-square"></i></button>
+        <button type="button" data-act="exit" class="tb-close" title="Close"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="menu-drop" id="menuDrop" role="menu" hidden></div>
+    </header>
+
+    <div class="workbench">
+      <nav class="activitybar" aria-label="Activity bar">
+        <div class="ab-group">
+          <button type="button" class="ab-btn active" id="abExplorer" data-act="explorer"><i class="fa-regular fa-copy"></i></button>
+          <button type="button" class="ab-btn" data-act="quick"><i class="fa-solid fa-magnifying-glass"></i></button>
+          <button type="button" class="ab-btn" id="abTerminal" data-act="terminal"><i class="fa-solid fa-terminal"></i></button>
+        </div>
+        <div class="ab-group">
+          <a class="ab-btn" data-link="github" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i></a>
+          <a class="ab-btn" data-link="linkedin" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin"></i></a>
+          <a class="ab-btn" data-link="email"><i class="fa-regular fa-envelope"></i></a>
+        </div>
+      </nav>
+
+      <aside class="sidebar" id="sidebar" aria-label="Side bar">
+        <div class="sb-head">Explorer</div>
+        <section class="sb-section">
+          <button type="button" class="sb-title" data-toggle="tree" aria-expanded="true">
+            <i class="fa-solid fa-chevron-down"></i> md-anjir-portfolio
+          </button>
+          <nav class="tree" id="tree" aria-label="Project files"></nav>
+        </section>
+        <section class="sb-section">
+          <button type="button" class="sb-title" data-toggle="connect" aria-expanded="true">
+            <i class="fa-solid fa-chevron-down"></i> Connect
+          </button>
+          <ul class="connect" id="connect"></ul>
+        </section>
+      </aside>
+
+      <main class="main">
+        <div class="tabs" id="tabs" role="tablist" aria-label="Open files"></div>
+        <div class="viewbar">
+          <div class="crumbs" id="crumbs" aria-label="Breadcrumbs"></div>
+          <div class="seg" id="viewSeg" role="group" aria-label="How to view this file" hidden>
+            <button type="button" data-mode="preview" aria-pressed="true">Preview</button>
+            <button type="button" data-mode="code" aria-pressed="false">Code</button>
+          </div>
+        </div>
+        <div class="editor" id="editor" tabindex="-1">
+          <div class="fv" id="view"></div>
+        </div>
+
+        <section class="panel" id="panel" aria-label="Terminal" hidden>
+          <div class="panel-head">
+            <span class="panel-tab">Terminal</span>
+            <button type="button" data-act="panel-close" aria-label="Close terminal"><i class="fa-solid fa-xmark"></i></button>
+          </div>
+          <div class="term" id="term">
+            <div id="termOut" aria-live="polite"></div>
+            <label class="term-line">
+              <span class="t-user">anjir@portfolio</span><span class="t-path">~</span><span class="t-dollar">$</span>
+              <input id="termIn" type="text" spellcheck="false" autocomplete="off" autocapitalize="off" aria-label="Terminal input">
+            </label>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <footer class="statusbar">
+      <div class="st-group">
+        <span class="st-item"><i class="fa-solid fa-code-branch"></i> main</span>
+        <span class="st-item"><i class="fa-regular fa-circle-xmark"></i> 0 <i class="fa-solid fa-triangle-exclamation"></i> 0</span>
+      </div>
+      <div class="st-group">
+        <span class="st-item" id="stLines"></span>
+        <span class="st-item">Spaces: 2</span>
+        <span class="st-item">UTF-8</span>
+        <span class="st-item" id="stLang"></span>
+        <a class="st-item st-link" data-link="linkedin" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin"></i> Let's connect</a>
+      </div>
+    </footer>
+    
+    <div class="scrim" id="scrim" data-act="scrim"></div>
+  </div>
+
+  <!-- Quick open -->
+  <div class="qo" id="qo" hidden>
+    <div class="qo-box" role="dialog" aria-modal="true" aria-label="Go to file">
+      <input id="qoInput" type="text" placeholder="Go to file" spellcheck="false" autocomplete="off" aria-label="Go to file">
+      <ul id="qoList" role="listbox"></ul>
+    </div>
+  </div>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
